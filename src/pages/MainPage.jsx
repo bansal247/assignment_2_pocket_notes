@@ -5,7 +5,7 @@ import GroupComponent from '../components/GroupComponent'
 function MainPage() {
   return (
     <div>
-        <GroupCreation/>
+        {/* <GroupCreation/> */}
         <GroupComponent/>
     </div>
 

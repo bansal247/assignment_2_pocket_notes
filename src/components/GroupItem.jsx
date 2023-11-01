@@ -19,10 +19,10 @@ function GroupItem({name, grpColor='#B38BFA'}) {
     
     
   return (
-    <div className={styles.main}>
+    <button className={styles.main}>
         <div className={styles.icon} style={{backgroundColor:grpColor}}>{f}{l}</div>
         <p className={styles.text}>{name}</p>
-    </div>
+    </button>
   )
 }
 
