@@ -1,9 +1,14 @@
 import React from 'react'
 import GroupCreation from '../components/GroupCreation'
+import GroupComponent from '../components/GroupComponent'
 
 function MainPage() {
   return (
-    <div><GroupCreation/></div>
+    <div>
+        <GroupCreation/>
+        <GroupComponent/>
+    </div>
+
   )
 }
 
