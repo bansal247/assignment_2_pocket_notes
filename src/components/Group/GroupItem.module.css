@@ -2,8 +2,9 @@
     display: flex;
     gap: 15px;
     align-items: center;
+    
+    padding: 5px 0;
     margin-left: 25px;
-    height: 80px;
     background: none;
     border: none;
     border-radius: 34px 0px 0px 34px;
@@ -11,7 +12,6 @@
 
 .main:hover{
     cursor: pointer;
-    
     background: #F7ECDC;
 }
 

@@ -1,0 +1,59 @@
+.main {
+    width: 70vw;
+    background: #F7ECDC;
+    max-height: 100vh;
+}
+
+.bar {
+    background-color: #E8E8E8;
+    height: 10%;
+    display: flex;
+}
+
+.noteArea {
+    background-color: #E8E8E8;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textarea {
+    resize: none;
+    height: 60%;
+    width: 92%;
+    border: 1px solid #CCCCCC;
+    outline: none;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    padding: .7em;
+}
+
+.textarea::placeholder {
+    color: #9A9A9A;
+}
+
+.NotesScreen {
+    height: 60%;
+    overflow-y: scroll;
+}
+
+.button {
+    position: fixed;
+    background: none;
+    outline: none;
+    border: none;
+    bottom: 5%;
+    right: 3%;
+    border-radius: 5px;
+    display: flex;
+}
+
+.button:hover {
+    box-shadow: 2px 2px 2px 2px #888888;
+    cursor: pointer;
+}

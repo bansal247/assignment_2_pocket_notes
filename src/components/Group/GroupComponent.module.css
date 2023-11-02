@@ -1,8 +1,8 @@
 .main{
     display: flex;
     flex-direction: column;
-    width: 30%;
-    min-height: 100vh;
+    width: 30vw;
+    height: 100vh;
 }
 
 .main > h1{
@@ -41,6 +41,7 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    margin-bottom: 20px;
 }
 
 .button > span{
@@ -62,8 +63,8 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: 70vh;
     min-width: 100%;
+    height: calc(100vh - 220px);
     gap: 5px;
 }
 
