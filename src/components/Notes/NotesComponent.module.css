@@ -6,14 +6,14 @@
 
 .bar {
     background-color: #E8E8E8;
-    height: 10%;
+    height: 10vh;
     display: flex;
     align-items: center;
 }
 
 .noteArea {
     background-color: #E8E8E8;
-    height: 30%;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
 
 .textarea {
     resize: none;
-    height: 60%;
+    height: 20vh;
     width: 92%;
     border: 1px solid #CCCCCC;
     outline: none;
@@ -39,7 +39,7 @@
 }
 
 .NotesScreen {
-    height: 60%;
+    height: 60vh;
     overflow-y: scroll;
 }
 
