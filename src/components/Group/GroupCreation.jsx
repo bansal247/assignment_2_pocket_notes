@@ -49,22 +49,22 @@ function GroupCreation({setGroupCreationScreen,setGroups,groups}) {
           setGroupCreationScreen(false)
           if(groups){
             setGroups([...groups,{
-              ['name']:newGroupName.trim(),
-              ['color']:newGroupColor
+              'name':newGroupName.trim(),
+              'color':newGroupColor
             }])
             grpsData = [...grpsData,{
-              ['name']:newGroupName.trim(),
-              ['color']:newGroupColor
+              'name':newGroupName.trim(),
+              'color':newGroupColor
             }]
           }
           else{
             setGroups([{
-              ['name']:newGroupName.trim(),
-              ['color']:newGroupColor
+              'name':newGroupName.trim(),
+              'color':newGroupColor
             }])
             grpsData = [{
-              ['name']:newGroupName.trim(),
-              ['color']:newGroupColor
+              'name':newGroupName.trim(),
+              'color':newGroupColor
             }]
           }
           window.localStorage.setItem('groupsData', JSON.stringify(grpsData));
