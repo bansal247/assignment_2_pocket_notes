@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import styles from './GroupCreation.module.css'
 
-function GroupCreation({onSubmitHandler, onChangeHandler}) {
+function GroupCreation({setGroupCreationScreen,setGroups,groups}) {
     let colors = [
         '#B38BFA',
         '#FF79F2',
@@ -11,7 +11,74 @@ function GroupCreation({onSubmitHandler, onChangeHandler}) {
         '#0047FF',
         '#6691FF',
     ]
+    const [newGroupName, setNewGroupName] = useState('')
+    const [newGroupColor, setNewGroupColor] = useState('')
+    const [error, setError] = useState(false)
+    const [errorText, setErrorText] = useState('')
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+      
+        let grpNames = []
+        
+        if(groups){
+          grpNames = groups.map(grp => grp['name']);
+        }
+        
+        let grpsData = groups
+        let valid = true;
+        // Check Error
+        if(!(newGroupName.trim().length > 0)){
+            setError(true)
+            setErrorText('Please Enter Group Name')
+            valid = false
+        }
+        else if(!(newGroupColor.length > 0)){
+            setError(true)
+            setErrorText('Please Choose Color')
+            valid = false
+        }
+        if(grpNames.includes(newGroupName)){
+            setError(true)
+            setErrorText('Please Type Unique Group Name')
+            valid = false
+        }
+
+        if (valid) {
+          setError(false)
+          setGroupCreationScreen(false)
+          if(groups){
+            setGroups([...groups,{
+              ['name']:newGroupName.trim(),
+              ['color']:newGroupColor
+            }])
+            grpsData = [...grpsData,{
+              ['name']:newGroupName.trim(),
+              ['color']:newGroupColor
+            }]
+          }
+          else{
+            setGroups([{
+              ['name']:newGroupName.trim(),
+              ['color']:newGroupColor
+            }])
+            grpsData = [{
+              ['name']:newGroupName.trim(),
+              ['color']:newGroupColor
+            }]
+          }
+          window.localStorage.setItem('groupsData', JSON.stringify(grpsData));
+        }
+      }
+    
+    const onChangeHandler = (e) => {
+        if (e.target.name==='name'){
+            setNewGroupName(e.target.value)
+        }
+        else if(e.target.name==='color'){
+            setNewGroupColor(e.target.value)
+        }
+    }
   return (
     <div className={styles.main}>
         <div className={styles.title}>Create New Notes group</div>
@@ -22,7 +89,7 @@ function GroupCreation({onSubmitHandler, onChangeHandler}) {
             </div>
             
             <div className={styles.formItem}>
-            <label className={styles.label} htmlFor="">Choose colour</label>
+            <label className={styles.label}>Choose colour</label>
             <div className={styles.options}>
             {colors.map((value,idx)=>(
                 <div key={idx}>
@@ -32,8 +99,8 @@ function GroupCreation({onSubmitHandler, onChangeHandler}) {
             ))}
             </div>
             </div>
-            <br />
-            <button className={styles.button} onSubmit={onSubmitHandler}>Create</button>
+            {error?<div className={styles.errorText}>{errorText}</div>:<br />}
+            <button className={styles.button} onClick={onSubmitHandler}>Create</button>
         </form>
     </div>
   )

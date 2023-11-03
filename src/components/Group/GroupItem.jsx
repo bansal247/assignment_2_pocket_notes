@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import styles from './GroupItem.module.css'
-function GroupItem({name, grpColor='#B38BFA', style={}}) {
+function GroupItem({name, grpColor, setSelectedGroup , style={}}) {
     const [l, setL] = useState('')
     const [f, setF] = useState('')
     useEffect(() => {
@@ -16,10 +16,15 @@ function GroupItem({name, grpColor='#B38BFA', style={}}) {
       }
     }, [name])
     
-    
+    const onSelect = () => {
+      setSelectedGroup({
+        'name':name,
+        'color':grpColor
+      })
+    }
     
   return (
-    <button className={styles.main} style={style}>
+    <button onClick={onSelect} className={styles.main} style={style} >
         <div className={styles.icon} style={{backgroundColor:grpColor}}>{f}{l}</div>
         <p className={styles.text}>{name}</p>
     </button>

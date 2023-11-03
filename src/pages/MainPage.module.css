@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+}
+
+@media screen and (max-width: 700px) {
+    .enable{
+        width: 100vw;
+        height: 100vh;
+    }
+    .disable{
+        display: none;
+    }
+}
