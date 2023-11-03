@@ -8,14 +8,14 @@ import Arrow from '../../assets/arrow.svg'
 import Back from '../../assets/back.svg'
 
 
-function NotesComponent({ selectedGroup,secondScreen,setBackArraow }) {
+function NotesComponent({ selectedGroup, secondScreen, setBackArraow }) {
 
   const [note, setNote] = useState('')
   const [notes, setNotes] = useState([])
 
   useEffect(() => {
-    if(selectedGroup)
-    setNotes(JSON.parse(localStorage.getItem(selectedGroup['name'])))
+    if (selectedGroup)
+      setNotes(JSON.parse(localStorage.getItem(selectedGroup['name'])))
   }, [selectedGroup])
 
 
@@ -45,22 +45,22 @@ function NotesComponent({ selectedGroup,secondScreen,setBackArraow }) {
   }
 
   const createNote = () => {
-    if(note.length<1){
+    if (note.length < 1) {
       return
     }
-    let {date,time} = getTimeAndDate()
+    let { date, time } = getTimeAndDate()
 
     let newNotes = null
     const data = {
-      'date':date,
-      'time':time,
-      'note':note
+      'date': date,
+      'time': time,
+      'note': note
     }
-    if(notes){
-      newNotes = [...notes,data]
-      
+    if (notes) {
+      newNotes = [...notes, data]
+
     }
-    else{
+    else {
       newNotes = [data]
     }
     setNotes(newNotes)
@@ -74,30 +74,30 @@ function NotesComponent({ selectedGroup,secondScreen,setBackArraow }) {
         :
         <>
           <div className={styles.bar}>
-          {secondScreen?<div>
-            <button onClick={()=>setBackArraow(true)} className={styles.backArrow}><img src={Back} alt="back" /></button>
-            </div>:<></>}
+            {secondScreen ? <div>
+              <button onClick={() => setBackArraow(true)} className={styles.backArrow}><img src={Back} alt="back" /></button>
+            </div> : <></>}
             <GroupItem
-            style={{
-              backgroundColor: '#E8E8E8',
-              marginLeft: '15px',
-              pointerEvents: 'none'
-            }}
-            name={selectedGroup['name']} 
-            grpColor={selectedGroup['color']}/>
+              style={{
+                backgroundColor: '#E8E8E8',
+                marginLeft: '15px',
+                pointerEvents: 'none'
+              }}
+              name={selectedGroup['name']}
+              grpColor={selectedGroup['color']} />
           </div>
           <div className={styles.NotesScreen}>
-          {notes?notes.map((n,idx)=>(
-            <NotesItem key={idx} date={n['date']} time={n['time']} note={n['note']} />
-          )):<></>}
+            {notes ? notes.map((n, idx) => (
+              <NotesItem key={idx} date={n['date']} time={n['time']} note={n['note']} />
+            )) : <></>}
           </div>
           <div className={styles.noteArea}>
-            <textarea 
-            onChange={handleChange} 
-            className={styles.textarea} 
-            onKeyDown={handleEnterKey}
-            value={note} 
-            placeholder='Enter your text here...........' />
+            <textarea
+              onChange={handleChange}
+              className={styles.textarea}
+              onKeyDown={handleEnterKey}
+              value={note}
+              placeholder='Enter your text here...........' />
             <button onClick={createNote} className={styles.button}><img src={Arrow} alt="enter" /></button>
           </div>
         </>
