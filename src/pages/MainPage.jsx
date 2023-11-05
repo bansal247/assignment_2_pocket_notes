@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
+import GroupComponent from '../components/groupsFolder/GroupComponent'
+import NotesComponent from '../components/notesForlder/NotesComponent'
+
 import styles from './MainPage.module.css'
-import GroupComponent from '../components/Group/GroupComponent'
-import NotesComponent from '../components/Notes/NotesComponent'
 
 function MainPage() {
 

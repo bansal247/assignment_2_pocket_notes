@@ -1,7 +1,8 @@
 import React from 'react'
+
 import styles from './NotesItem.module.css'
 
-function NotesItem({date,time,note}) {
+function NotesItem({ date, time, note }) {
     return (
         <div className={styles.main}>
             <div className={styles.dateTime}>

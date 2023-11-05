@@ -13,16 +13,6 @@
     width: 600px;
 }
 
-.title{
-    margin: 0;
-    font-family: Roboto;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 59px;
-    letter-spacing: 0.02em;
-    text-align: left;
-}
-
 .p1{
     margin: 0;
     width: 600px;
@@ -49,6 +39,16 @@
     line-height: 32px;
     letter-spacing: 0.02em;
     color: #292929;
+}
+
+.title{
+    margin: 0;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 59px;
+    letter-spacing: 0.02em;
+    text-align: left;
 }
 
 @media screen and (max-width: 700px) {

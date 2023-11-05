@@ -1,3 +1,57 @@
+.button{
+    width: 8em;
+    height: 2.1em;
+    border-radius: 11px;
+    background-color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.035em;
+    color: #fff;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.color{
+    display: none;
+}
+
+.color:checked~label{
+    border: 3px solid #000000;
+}
+
+.colorLabel{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+}
+
+.colorLabel:hover{
+    cursor: pointer;
+}
+
+.errorText{
+    color: red;
+    font-weight: 600;
+}
+
+.formItem{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.label{
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 43px;
+    letter-spacing: 0.035em;
+    text-align: left;
+    width: 12em;
+}
+
 .main{
     display: flex;
     flex-direction: column;
@@ -19,26 +73,12 @@
     gap: 10px;
 }
 
-.errorText{
-    color: red;
-    font-weight: 600;
-}
-
-.title{
-    font-size: 1.2em;
-    font-weight: 600;
-    line-height: 46px;
-    letter-spacing: 0.035em;
-    text-align: left;
-}
-
-.label{
-    font-size: 1.1em;
-    font-weight: 600;
-    line-height: 43px;
-    letter-spacing: 0.035em;
-    text-align: left;
-    width: 12em;
+.options{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
 }
 
 .text_field{
@@ -55,57 +95,17 @@
     text-align: left;
 }
 
+.title{
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 46px;
+    letter-spacing: 0.035em;
+    text-align: left;
+}
+
 .text_field::placeholder{
     color: #979797;
     font-weight: 400;
-}
-
-.options{
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    align-items: center;
-    gap: 10px;
-}
-
-.formItem{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.color{
-    display: none;
-}
-
-.colorLabel{
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    
-}
-
-.colorLabel:hover{
-    cursor: pointer;
-}
-
-.color:checked~label{
-    border: 3px solid #000000;
-}
-
-.button{
-    width: 8em;
-    height: 2.1em;
-    border-radius: 11px;
-    background-color: #000000;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0.035em;
-    color: #fff;
-    align-self: flex-end;
-    cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {

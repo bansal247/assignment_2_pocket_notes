@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import NotesInitialScreen from './NotesInitialScreen'
 
-import styles from './NotesComponent.module.css'
+import NotesInitialScreen from './NotesInitialScreen'
 import NotesItem from './NotesItem'
-import GroupItem from '../Group/GroupItem'
+import GroupItem from '../groupsFolder/GroupItem'
+
 import Arrow from '../../assets/arrow.svg'
 import Back from '../../assets/back.svg'
 
+import styles from './NotesComponent.module.css'
 
+//Change GroupItem Size
 function NotesComponent({ selectedGroup, secondScreen, setBackArraow }) {
 
   const [note, setNote] = useState('')
@@ -86,7 +88,7 @@ function NotesComponent({ selectedGroup, secondScreen, setBackArraow }) {
               name={selectedGroup['name']}
               grpColor={selectedGroup['color']} />
           </div>
-          <div className={styles.NotesScreen}>
+          <div className={styles.notesScreen}>
             {notes ? notes.map((n, idx) => (
               <NotesItem key={idx} date={n['date']} time={n['time']} note={n['note']} />
             )) : <></>}

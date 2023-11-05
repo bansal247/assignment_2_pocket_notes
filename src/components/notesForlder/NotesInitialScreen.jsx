@@ -2,6 +2,7 @@ import React from 'react'
 
 import bgImage from '../../assets/image-removebg-preview 1.png'
 import lock from '../../assets/lock.svg'
+
 import styles from './NotesInitialScreen.module.css'
 
 function NotesInitialScreen() {
